@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-context-audit",
+  "description": "Audit what Claude Code loads into every session and clean it up.",
+  "owner": { "name": "itskeKs" },
+  "plugins": [
+    {
+      "name": "context-audit",
+      "description": "Audit CLAUDE.md, skills, agents, plugins, MCP servers and hooks: per-request context cost, real usage from your transcripts, and a safe, approval-based cleanup.",
+      "version": "1.0.0",
+      "author": { "name": "itskeKs" },
+      "category": "productivity",
+      "source": "./plugins/context-audit",
+      "homepage": "https://github.com/itskeKs/claude-context-audit"
+    }
+  ]
+}
