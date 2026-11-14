@@ -1,9 +1,9 @@
 ---
-name: context-audit
+name: context-janitor
 description: Audit and clean up what Claude Code loads into every session — CLAUDE.md/memory files, skills, agents, slash commands, plugins, MCP servers, hooks — and show how much context each costs per request and how often it was actually used. Use when the user wants to tidy, slim down, check or "aufräumen/bereinigen" their Claude Code setup, asks why sessions start with so much context, or asks what is loaded each session. Audits first, reports, and changes nothing until the user approves each item.
 ---
 
-# Context audit
+# Context janitor
 
 Goal: show the user, item by item, what sits in the context of every request, what it costs, whether it is used, and what is safe to remove — then remove only what they approve.
 

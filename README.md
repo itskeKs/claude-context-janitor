@@ -1,4 +1,4 @@
-# claude-context-audit
+# claude-context-janitor
 
 A Claude Code skill that checks everything your setup loads into **every** session — `CLAUDE.md` and memory files, skills, agents, slash commands, plugins, MCP servers and hooks. For each item it shows:
 
@@ -21,22 +21,22 @@ Over time a Claude Code setup piles up skills you never call, MCP servers from o
 As a plugin (recommended):
 
 ```
-/plugin marketplace add itskeKs/claude-context-audit
-/plugin install context-audit@claude-context-audit
+/plugin marketplace add itskeKs/claude-context-janitor
+/plugin install context-janitor@claude-context-janitor
 ```
 
 Or copy the skill by hand:
 
 ```bash
-git clone https://github.com/itskeKs/claude-context-audit
-cp -R claude-context-audit/plugins/context-audit/skills/context-audit ~/.claude/skills/
+git clone https://github.com/itskeKs/claude-context-janitor
+cp -R claude-context-janitor/plugins/context-janitor/skills/context-janitor ~/.claude/skills/
 ```
 
 Start a new session afterwards.
 
 ## Use
 
-Ask Claude something like *"audit my Claude Code setup"* or *"what gets loaded every session and what can go?"*. You can also call the skill directly: `/context-audit` (manual install) or `/context-audit:context-audit` (plugin install).
+Ask Claude something like *"audit my Claude Code setup"* or *"what gets loaded every session and what can go?"*. You can also call the skill directly: `/context-janitor` (manual install) or `/context-janitor:context-janitor` (plugin install).
 
 The skill runs in four phases:
 
@@ -47,7 +47,7 @@ The skill runs in four phases:
 
 ## The script
 
-`plugins/context-audit/skills/context-audit/scripts/audit.py` uses only the Python standard library and never changes anything. You can run it on its own:
+`plugins/context-janitor/skills/context-janitor/scripts/audit.py` uses only the Python standard library and never changes anything. You can run it on its own:
 
 ```bash
 python3 -I audit.py --cwd /path/to/project --days 90 [--json out.json] [--no-usage]
@@ -71,6 +71,17 @@ Token counts are estimates (~4 characters per token). Use the live `/context` br
 - Claude Code (CLI, desktop app or IDE extension)
 - Python 3.8+ on `PATH` as `python3`
 - macOS or Linux. On Windows everything except the process count works.
+
+## Renamed from context-audit
+
+This project used to be called `claude-context-audit`. GitHub redirects the old URL. If you installed the old plugin, remove it and install the new one:
+
+```
+/plugin uninstall context-audit@claude-context-audit
+/plugin marketplace remove claude-context-audit
+/plugin marketplace add itskeKs/claude-context-janitor
+/plugin install context-janitor@claude-context-janitor
+```
 
 ## License
 

@@ -1,0 +1,10 @@
+{
+  "name": "context-janitor",
+  "description": "Audit CLAUDE.md, skills, agents, plugins, MCP servers and hooks: per-request context cost, real usage from your transcripts, and a safe, approval-based cleanup.",
+  "version": "2.0.0",
+  "author": { "name": "itskeKs" },
+  "homepage": "https://github.com/itskeKs/claude-context-janitor",
+  "repository": "https://github.com/itskeKs/claude-context-janitor",
+  "license": "MIT",
+  "keywords": ["context", "tokens", "audit", "cleanup", "janitor", "mcp", "skills", "claude-md"]
+}
