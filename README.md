@@ -83,6 +83,10 @@ This project used to be called `claude-context-audit`. GitHub redirects the old 
 /plugin install context-janitor@claude-context-janitor
 ```
 
+## Working on this repository
+
+An agent opened in this checkout gets its rules from [AGENTS.md](AGENTS.md) (`CLAUDE.md` is a symlink to it). `make check` verifies the manifests, the skill frontmatter and a smoke run of the script and of `doctor.sh`, all in temporary directories. `make doctor` is a read-only check of Python 3.8+ and of installed copies of the skill; it compares them with this checkout.
+
 ## License
 
 MIT
