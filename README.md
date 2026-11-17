@@ -34,6 +34,8 @@ cp -R claude-context-janitor/plugins/context-janitor/skills/context-janitor ~/.c
 
 Start a new session afterwards.
 
+In a clone, `make doctor` checks the Python version and tells you whether an installed copy of the skill differs from the clone. It changes nothing.
+
 ## Use
 
 Ask Claude something like *"audit my Claude Code setup"* or *"what gets loaded every session and what can go?"*. You can also call the skill directly: `/context-janitor` (manual install) or `/context-janitor:context-janitor` (plugin install).
@@ -86,6 +88,10 @@ This project used to be called `claude-context-audit`. GitHub redirects the old 
 ## Working on this repository
 
 An agent opened in this checkout gets its rules from [AGENTS.md](AGENTS.md) (`CLAUDE.md` is a symlink to it). `make check` verifies the manifests, the skill frontmatter and a smoke run of the script and of `doctor.sh`, all in temporary directories. `make doctor` is a read-only check of Python 3.8+ and of installed copies of the skill; it compares them with this checkout.
+
+The working copy of the skill is linked into the checkout as `.claude/skills/context-janitor`, so a session opened here can run the skill as it is in the clone. An installed copy does not follow the clone: reinstall it after a change.
+
+You can also let an agent do the install: open Claude Code or Codex in a clone and say which install form you want. `AGENTS.md` gives it both forms and the rule never to replace an existing `~/.claude/skills/context-janitor` without asking you.
 
 ## License
 
